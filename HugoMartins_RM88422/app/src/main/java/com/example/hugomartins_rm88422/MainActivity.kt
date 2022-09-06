@@ -20,26 +20,21 @@ class MainActivity : AppCompatActivity() {
 
         criaRecycler()
 
-        dataBind.addItem.setOnClickListener(){
-            listItemAdapter.AddListItem(ItemObject("valor auto$count", "Descrição conteudo gerado auto$count"))
-            count++
-        }
-
     }
 
     private fun criaRecycler() {
-        dataBind.lista.layoutManager = LinearLayoutManager(this)
+        dataBind.rvList.layoutManager = LinearLayoutManager(this)
 
         val conteudo = mutableListOf<ItemObject>()
 
-        conteudo.add(ItemObject("valor 1", "descrição do conteudo 1 "))
-        conteudo.add(ItemObject("valor 2", "descrição do conteudo 2 "))
-        conteudo.add(ItemObject("valor 3", "descrição do conteudo 3 "))
-        conteudo.add(ItemObject("valor 4", "descrição do conteudo 4 "))
+        conteudo.add(ItemObject("Aneis do Poder", "Aventura", true))
+        conteudo.add(ItemObject("Stranger Things", "Suspense", true))
+        conteudo.add(ItemObject("Avatar: A lenda de Aang", "Aventura", true))
+        conteudo.add(ItemObject("Mandalorian", "Ação", true))
 
         listItemAdapter.setItensList(conteudo)
 
-        dataBind.lista.adapter = listItemAdapter
+        dataBind.rvList.adapter = listItemAdapter
 
     }
 }

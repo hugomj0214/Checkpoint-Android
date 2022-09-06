@@ -11,7 +11,8 @@ class ListItemAdapter : RecyclerView.Adapter<ListItemAdapter.ItemHolder>() {
 
     class ItemHolder(val itemCell: ItemCellBinding) : RecyclerView.ViewHolder(itemCell.root) {
         fun bind(itemObject: ItemObject) {
-            itemCell.textViewTextoItem.text = itemObject.textoItem
+            itemCell.tvSerie.text = itemObject.nome
+            itemCell.tvGenero.text = itemObject.genero
         }
     }
 
@@ -23,7 +24,7 @@ class ListItemAdapter : RecyclerView.Adapter<ListItemAdapter.ItemHolder>() {
 
     override fun onBindViewHolder(holder: ItemHolder, position: Int) {
         holder.bind(items[position])
-        holder.itemCell.removeItemBtn.setOnClickListener(){
+        holder.itemCell.btnRemove.setOnClickListener(){
             removeListItem(items[position])
         }
     }
